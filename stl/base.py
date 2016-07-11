@@ -150,6 +150,7 @@ class BaseMesh(logger.Logged, collections.Mapping):
         self.normals = data['normals']
         self.vectors = data['vectors']
         self.attr = data['attr']
+        self.points = [item for sublist in data['vectors'] for item in sublist]
 
         if calculate_normals:
             self.update_normals()
